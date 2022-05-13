@@ -1,0 +1,29 @@
+<div *ngFor="let data of datas">
+    <div id="desc" class="d-flex align-items-center">
+      <img src="https://www.weatherbit.io/static/img/icons/{{data.weather.icon}}.png" alt="{{data.weather.desc}}"/>
+      <h1>{{data.temp}}°</h1>
+      <h1>{{data.weather.description}}</h1>
+    </div>
+    <h1>
+        {{data.city_name}} {{data.country_code}}
+    </h1>
+    <h1>Feels Like: {{data.app_temp}}°</h1>
+    <h1>Sunrise: {{data.sunrise}} GMT</h1>
+    <h1>Sunset: {{data.sunset}} GMT</h1>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <input
+        type="text"
+        placeholder="Input city name"
+        required
+        (input)="onCityName($event)"
+      />
+      <input 
+      type="submit" 
+      value="Submit" 
+      class="btn btn-primary"/>
+    </form>
+    <p>{{ipData.city}}</p>
+    <p>{{ipData.ip}}</p>
+    <p>{{ipData.region}}</p>
+    <p>{{ipData.postal}}</p>
+</div>
