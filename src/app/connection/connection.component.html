@@ -10,20 +10,6 @@
     <h1>Feels Like: {{data.app_temp}}°</h1>
     <h1>Sunrise: {{data.sunrise}} GMT</h1>
     <h1>Sunset: {{data.sunset}} GMT</h1>
-    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
-      <input
-        type="text"
-        placeholder="Input city name"
-        required
-        (input)="onCityName($event)"
-      />
-      <input 
-      type="submit" 
-      value="Submit" 
-      class="btn btn-primary"/>
-    </form>
-    <p>{{ipData.city}}</p>
-    <p>{{ipData.ip}}</p>
-    <p>{{ipData.region}}</p>
-    <p>{{ipData.postal}}</p>
+    <app-form
+      (city)="getCity($event)"></app-form>
 </div>

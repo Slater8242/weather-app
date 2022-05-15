@@ -1,0 +1,12 @@
+<form #f="ngForm" (ngSubmit)="onSubmit()" novalidate>
+    <input
+      type="text"
+      placeholder="Input city name"
+      required
+      (input)="onCityName($event)"
+    />
+    <input 
+    type="submit" 
+    value="Submit" 
+    class="btn btn-primary"/>
+  </form>
