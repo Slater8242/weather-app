@@ -9,7 +9,7 @@ export class FormComponent implements OnInit {
   @Output() city = new EventEmitter<{cityName:string}>()
   cityName:string = "";
   
-  constructor() { }
+  constructor() {}
 
   ngOnInit(): void {
   }

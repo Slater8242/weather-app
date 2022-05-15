@@ -1,4 +1,5 @@
-<div *ngFor="let data of datas">
+<div *ngIf="datas; else infoText">
+  <div *ngFor="let data of datas">
     <div id="desc" class="d-flex align-items-center">
       <img src="https://www.weatherbit.io/static/img/icons/{{data.weather.icon}}.png" alt="{{data.weather.desc}}"/>
       <h1>{{data.temp}}°</h1>
@@ -12,4 +13,13 @@
     <h1>Sunset: {{data.sunset}} GMT</h1>
     <app-form
       (city)="getCity($event)"></app-form>
+  </div>
 </div>
+
+<app-data-weather 
+(datas)="getData($event)"
+[cityName]="city"></app-data-weather>
+
+<ng-template #infoText>
+  <h1>No data found</h1>
+</ng-template>
